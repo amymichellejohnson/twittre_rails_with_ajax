@@ -1,1 +1,6 @@
-HI MOM LOOK @ MY KEWL WEBSITE
+<h2>TWEETS</h2>
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li><%= tweet.body %></li>
+  <% end %>
+</ul>

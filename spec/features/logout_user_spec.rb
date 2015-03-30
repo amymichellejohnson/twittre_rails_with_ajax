@@ -8,4 +8,8 @@ describe "the log a user out process" do
     click_on "log_out"
     expect(page).to have_content "successfully"
   end
+  it "doesn't allow anonymous to see log out link" do
+    visit root_path
+    expect(page).to_not have_content "log_out"
+  end
 end
