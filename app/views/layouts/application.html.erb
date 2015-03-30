@@ -7,10 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+      <ul class="nav navbar-nav navbar-left">
+        <a class="navbar-brand" href="/">PDX</a>
+      </ul>
 
-<%= yield %>
+      <ul class="nav navbar-nav navbar pull-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete, id: "log_out" %></li>
+        <% else %>
+          <li> <%= link_to "Sign up", new_user_registration_path, id: "sign_up" %> </li>
+          <li> <%= link_to "Sign in", new_user_session_path, id: "sign_in" %> </li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <% if user_signed_in? %>
+      <p class="right-align">Logged in as <%= current_user.email %></p>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+  </div>
 
 </body>
 </html>
