@@ -1,6 +1,8 @@
-<h2>TWEETS</h2>
-<ul>
-  <% @tweets.each do |tweet| %>
-    <li><%= tweet.body %></li>
-  <% end %>
-</ul>
+<div id="index">
+  <h2>TWEETS</h2>
+  <ul id="tweet_list">
+    <% @tweets.each do |tweet| %>
+      <li><%= tweet.body %></li>
+    <% end %>
+  </ul>
+</div>

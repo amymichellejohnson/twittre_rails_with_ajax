@@ -1,6 +1,6 @@
 <%= render "layouts/errors", object: @tweet %>
 
-<%= form_for @tweet do |f| %>
+<%= form_for @tweet, remote:true do |f| %>
   <p>
     <%= f.label "Author a new tweet" %>
     <%= f.text_area :body %>

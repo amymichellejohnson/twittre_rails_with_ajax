@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav navbar pull-right">
         <% if user_signed_in? %>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete, id: "log_out" %></li>
-          <li><%= link_to "Tweet", new_tweet_path, id: "create_tweet" %></li>
+          <li><%= link_to "Tweet", new_tweet_path, id: "create_tweet", remote:true %></li>
 
         <% else %>
           <li> <%= link_to "Sign up", new_user_registration_path, id: "sign_up" %> </li>
@@ -31,7 +31,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+    <div class="col-md-10 offset-1" id="main-content">
+      <%= yield %>
+    </div>
 
   </div>
 

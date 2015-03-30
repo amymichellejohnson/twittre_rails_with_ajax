@@ -13,7 +13,10 @@ class TweetsController < ApplicationController
 
     if @tweet.save
       flash[:notice] = "Tweet successfully submitted"
-      redirect_to root_path
+      respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js
+      end
     else
       render :new
     end
