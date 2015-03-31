@@ -1,6 +1,9 @@
 FactoryGirl.define do
   factory(:user) do
+    DatabaseCleaner.clean
     email('some_person@somewebsite.com')
-    password "74108520"
+    password('qwertyui')
+    password_confirmation('qwertyui')
   end
+
 end

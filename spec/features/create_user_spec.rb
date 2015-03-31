@@ -1,5 +1,6 @@
 require "rails_helper"
 
+
 describe "the create a user process" do
   it "creates a new user" do
     visit root_path

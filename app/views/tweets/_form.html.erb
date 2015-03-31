@@ -1,11 +1,12 @@
-<%= render "layouts/errors", object: @tweet %>
-
-<%= form_for @tweet, remote:true do |f| %>
-  <p>
-    <%= f.label "Author a new tweet" %>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit id: "submit" %>
-  </p>
-<% end %>
+<div id="form_errors">
+  <%= render "layouts/errors", object: @tweet %>
+  <%= form_for @tweet, remote:true do |f| %>
+    <p>
+      <%= f.label "Author a new tweet" %>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit id: "submit" %>
+    </p>
+  <% end %>
+</div>
